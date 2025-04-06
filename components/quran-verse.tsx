@@ -10,8 +10,8 @@ export function QuranVerse() {
               وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا
             </p>
             <p className="text-gray-600 italic">
-              "And whoever saves a life, it will be as if they saved all of
-              humanity"
+              `&quot;`And whoever saves a life, it will be as if they saved all
+              of humanity`&quot;`
             </p>
             <p className="text-gray-500 text-sm mt-1">(Quran 5:32)</p>
           </CardContent>

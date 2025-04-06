@@ -19,7 +19,9 @@ export function QuoteCard() {
             <p className="text-xl md:text-2xl font-serif mb-2 text-brand-brown-800">
               {quote.arabic}
             </p>
-            <p className="text-brand-brown-600 italic">"{quote.english}"</p>
+            <p className="text-brand-brown-600 italic">
+              `&quot;`{quote.english}`&quot;`
+            </p>
             <p className="text-brand-brown-500 text-sm mt-1">
               ({quote.source})
             </p>

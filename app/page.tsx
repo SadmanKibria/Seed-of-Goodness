@@ -60,12 +60,25 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-              <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg">
-                <img
+              <div className="mx-auto w-full max-w-[720px] aspect-video overflow-hidden rounded-xl shadow-lg">
+                {/* 
+                 <img
                   alt="Children receiving humanitarian aid in Gaza"
                   className="object-cover w-full h-full"
                   src="https://images.unsplash.com/photo-1469571486292-b53601010b89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                />
+                /> 
+                */}
+
+                <iframe
+                  width="720"
+                  height="405"
+                  src="https://www.youtube.com/embed/9Ap8qz9Lcsk?si=9n2wWSOfq-6vKC8i"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
@@ -222,6 +235,18 @@ export default function HomePage() {
                   <p className="text-sm text-brand-brown-500">
                     Donors Worldwide
                   </p>
+                </div>
+                <div className="mx-auto  max-w-[720px] aspect-video overflow-hidden rounded-xl shadow-lg">
+                  <iframe
+                    width="720"
+                    height="405"
+                    src="https://www.youtube.com/embed/_7L8L7LKwn4?si=ee7U5jeu6ds9onyk"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  ></iframe>
                 </div>
               </div>
             </div>
