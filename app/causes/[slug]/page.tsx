@@ -9,6 +9,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getCauseById } from "@/lib/causes-data";
 import { formatCurrency } from "@/lib/utils";
+import Image from "next/image";
 
 // Generate dynamic metadata for each cause
 export async function generateMetadata({
@@ -19,17 +20,21 @@ export async function generateMetadata({
   const cause = getCauseById(params.slug);
 
   if (!cause) {
-    return generateMetadata(
-      "Cause Not Found",
-      "The cause you're looking for doesn't exist."
-    );
+    return {
+      title: "Cause Not Found",
+      description: "The cause you're looking for doesn't exist.",
+    };
   }
 
-  return generateMetadata(
-    cause.title,
-    cause.description,
-    `causes/${params.slug}`
-  );
+  return {
+    title: cause.title,
+    description: cause.description,
+    openGraph: {
+      title: cause.title,
+      description: cause.description,
+      url: `/causes/${params.slug}`,
+    },
+  };
 }
 
 export default function CausePage({ params }: { params: { slug: string } }) {
@@ -41,7 +46,9 @@ export default function CausePage({ params }: { params: { slug: string } }) {
         <SiteHeader />
         <main className="flex-1 container py-12">
           <h1 className="text-3xl font-bold">Cause not found</h1>
-          <p className="mt-4">The cause you're looking for doesn't exist.</p>
+          <p className="mt-4">
+            The cause you`&apos;`re looking for doesn`&apos;`t exist.
+          </p>
           <Link href="/causes" className="mt-6 inline-block">
             <Button>Back to Causes</Button>
           </Link>
@@ -84,7 +91,7 @@ export default function CausePage({ params }: { params: { slug: string } }) {
             <div className="grid gap-10 lg:grid-cols-3 items-start">
               <div className="lg:col-span-2 space-y-8">
                 <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg">
-                  <img
+                  <Image
                     src={cause.image || "/placeholder.svg"}
                     alt={cause.title}
                     className="object-cover w-full h-full"

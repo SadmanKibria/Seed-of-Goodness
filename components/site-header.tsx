@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-
-import { siteConfig } from "@/lib/seo-config";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -58,9 +56,6 @@ export function SiteHeader() {
           <div className="flex flex-col">
             <span className="text-brand-green-600 font-bold text-lg">
               Seeds of Goodness
-            </span>
-            <span className="text-xs text-brand-brown-600">
-              Charity Reg: {siteConfig.charity.number}
             </span>
           </div>
         </Link>

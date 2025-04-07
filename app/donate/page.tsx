@@ -45,7 +45,8 @@ export default function DonatePage() {
   const [email, setEmail] = useState(searchParams.get("email") || "");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [isProcessing] = useState(false);
+  //const [setIsProcessing] = useState(false);
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
 
   // Initialize form values from URL parameters

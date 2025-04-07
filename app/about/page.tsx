@@ -5,6 +5,7 @@ import { QuoteCard } from "@/components/quote-card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { generateMetadata } from "@/lib/seo-config";
+import Image from "next/image";
 
 // Generate metadata for this page
 export const metadata: Metadata = generateMetadata(
@@ -57,7 +58,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg">
-                <img
+                <Image
                   alt="Charity volunteers distributing aid to families in need"
                   className="object-cover w-full h-full"
                   src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
@@ -71,7 +72,7 @@ export default function AboutPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg order-2 lg:order-1">
-                <img
+                <Image
                   alt="Seeds of Goodness team members working in the field"
                   className="object-cover w-full h-full"
                   src="https://images.unsplash.com/photo-1593113630400-ea4288922497?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"

@@ -240,8 +240,8 @@ export function PaymentMethods({
       <TabsContent value="paypal" className="mt-4 space-y-4">
         <div className="bg-brand-green-50 p-4 rounded-lg border border-brand-green-200">
           <p className="text-sm text-brand-brown-700">
-            Pay securely using your PayPal account. You'll be redirected to
-            PayPal to complete your payment.
+            Pay securely using your PayPal account. You`&apos;`ll be redirected
+            to PayPal to complete your payment.
           </p>
         </div>
 
@@ -272,7 +272,7 @@ export function PaymentMethods({
         <div className="bg-brand-green-50 p-4 rounded-lg border border-brand-green-200 mb-4">
           <p className="text-sm text-brand-brown-700">
             Make a direct bank transfer to our account. Please use your name and
-            "{cause}" as the reference.
+            `&quot;`{cause}`&quot;` as the reference.
           </p>
         </div>
 

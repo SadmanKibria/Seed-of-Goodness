@@ -11,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getRecentNews } from "@/lib/news-data";
+import Image from "next/image";
 
 export function NewsSection() {
   const recentNews = getRecentNews(3);
@@ -48,7 +49,7 @@ export function NewsSection() {
               </CardHeader>
               <CardContent>
                 <div className="aspect-video w-full overflow-hidden rounded-lg mb-4">
-                  <img
+                  <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"

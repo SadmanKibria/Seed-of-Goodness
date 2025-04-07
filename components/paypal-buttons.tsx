@@ -27,7 +27,10 @@ export function PayPalButtons({
               shape: "rect",
               label: "paypal",
             },
-            createOrder: (data: any, actions: any) => {
+            createOrder: (
+              data: Record<string, unknown>,
+              actions: paypal.Actions
+            ) => {
               return actions.order.create({
                 purchase_units: [
                   {
@@ -42,13 +45,15 @@ export function PayPalButtons({
                 },
               });
             },
-            onApprove: (data: any, actions: any) => {
-              return actions.order.capture().then((details: any) => {
+            onApprove: (
+              data: Record<string, unknown>,
+              actions: paypal.Actions
+            ) => {
+              return actions.order.capture().then(() => {
                 alert("Transaction completed! Thank you for your donation.");
-                // Here you would typically call your server to record the donation
               });
             },
-            onError: (err: any) => {
+            onError: (err: unknown) => {
               console.error("PayPal error:", err);
               alert(
                 "There was an error processing your payment. Please try again."

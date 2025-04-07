@@ -18,6 +18,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { getAllCauses } from "@/lib/causes-data";
 import { generateMetadata } from "@/lib/seo-config";
 import { formatCurrency } from "@/lib/utils";
+import Image from "next/image";
 
 // Generate metadata for this page
 export const metadata: Metadata = generateMetadata(
@@ -63,7 +64,7 @@ export default function CausesPage() {
                     className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-brand-brown-200 rounded-xl"
                   >
                     <div className="aspect-video w-full overflow-hidden">
-                      <img
+                      <Image
                         src={cause.image || "/placeholder.svg"}
                         alt={cause.title}
                         className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"

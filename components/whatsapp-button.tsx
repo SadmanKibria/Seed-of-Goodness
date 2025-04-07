@@ -21,6 +21,10 @@ export function WhatsAppButton({ phoneNumber }: WhatsAppButtonProps) {
       }
     };
 
+    // Set initially visible on mobile
+    const isMobile = window.innerWidth < 768;
+    setIsVisible(isMobile);
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
