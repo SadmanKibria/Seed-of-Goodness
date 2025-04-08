@@ -27,7 +27,6 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PaymentMethods } from "@/components/payment-methods";
-import { BankTransferDetails } from "@/components/bank-transfer-details";
 import { QuoteCard } from "@/components/quote-card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -45,8 +44,6 @@ export default function DonatePage() {
   const [email, setEmail] = useState(searchParams.get("email") || "");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [isProcessing] = useState(false);
-  //const [setIsProcessing] = useState(false);
   const [showPaymentMethods, setShowPaymentMethods] = useState(false);
 
   // Initialize form values from URL parameters
@@ -430,36 +427,17 @@ export default function DonatePage() {
 
                 <div className="space-y-4">
                   {!showPaymentMethods ? (
-                    <>
-                      <Button
-                        className="w-full h-12 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-                        disabled={!isFormValid() || isProcessing}
-                        onClick={handleProceedToPayment}
-                      >
-                        {isProcessing ? "Processing..." : "Proceed to Payment"}
-                      </Button>
-
-                      <div className="relative">
-                        <div className="absolute inset-0 flex items-center">
-                          <span className="w-full border-t" />
-                        </div>
-                        <div className="relative flex justify-center text-xs uppercase">
-                          <span className="bg-background px-2 text-muted-foreground">
-                            Or
-                          </span>
-                        </div>
-                      </div>
-
-                      <BankTransferDetails />
-                    </>
+                    <Button
+                      className="w-full h-12 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                      disabled={!isFormValid()}
+                      onClick={handleProceedToPayment}
+                    >
+                      Proceed to Payment
+                    </Button>
                   ) : (
                     <PaymentMethods
                       amount={getDonationAmount()}
-                      cause={cause}
-                      onPaymentComplete={() => {
-                        // Handle payment completion
-                        alert("Thank you for your donation!");
-                      }}
+                      cause={getCauseLabel(cause)}
                     />
                   )}
 

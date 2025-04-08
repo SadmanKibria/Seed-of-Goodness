@@ -68,6 +68,26 @@ export default function NewsPage() {
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
                       ></iframe>
+                    ) : index === 1 ? (
+                      <iframe
+                        className="w-full h-full absolute inset-0"
+                        src="https://www.youtube.com/embed/_7L8L7LKwn4?si=bDgbfR3-rOBtR7V0"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    ) : index === 2 ? (
+                      <iframe
+                        className="w-full h-full absolute inset-0"
+                        src="https://www.youtube.com/embed/9Ap8qz9Lcsk?si=X_zh1H056y3bIkIJ"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
                     ) : (
                       <Image
                         src="/seedofg-pic1.jpg"

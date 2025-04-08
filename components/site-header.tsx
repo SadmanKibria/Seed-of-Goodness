@@ -19,7 +19,7 @@ export function SiteHeader() {
     if (path === "/") {
       return pathname === path;
     }
-    return pathname.startsWith(path);
+    return pathname?.startsWith(path);
   };
 
   // Handle scroll event to change header appearance
