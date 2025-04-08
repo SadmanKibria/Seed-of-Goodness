@@ -13,6 +13,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { getFeaturedCauses } from "@/lib/causes-data";
 import { formatCurrency } from "@/lib/utils";
+import Image from "next/image";
 
 export function FeaturedCauses() {
   const featuredCauses = getFeaturedCauses(3);
@@ -41,7 +42,7 @@ export function FeaturedCauses() {
                 className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-brand-brown-200 rounded-xl"
               >
                 <div className="aspect-video w-full overflow-hidden">
-                  <img
+                  <Image
                     src={cause.image || "/placeholder.svg"}
                     alt={cause.title}
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"

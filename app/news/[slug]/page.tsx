@@ -6,14 +6,13 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-// This would typically come from a database or CMS
 const newsData = {
   "ramadan-distribution-gaza": {
-    title: "£6,000 Distributed in Gaza",
+    title: "£3,000 Distributed in Gaza",
     description:
-      "Cash aid delivered directly to families in Gaza during Ramadan.",
+      "Cash aid delivered directly to families in Gaza on 23rd Ramadan.",
     content: `
-      <p>Our team on the ground in Gaza successfully distributed £6,000 in cash aid to families in need on the 21st day of Ramadan, providing essential support during this difficult time.</p>
+      <p>Our team on the ground in Gaza successfully distributed £3,000 in cash aid to families in need on the 23rd day of Ramadan, providing essential support during this difficult time.</p>
       
       <p>The distribution targeted the most vulnerable families, including those with elderly members, children, and individuals with disabilities. Each family received financial assistance to help cover their basic needs, including food, medicine, and other essentials.</p>
       
@@ -25,7 +24,7 @@ const newsData = {
       
       <p>We extend our heartfelt thanks to all our donors who made this distribution possible. Your generosity continues to make a real difference in the lives of those facing extreme hardship.</p>
     `,
-    date: "Ramadan 21, 2024",
+    date: "Ramadan 23, 2025",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
   },
@@ -85,7 +84,7 @@ export const metadata: Metadata = {
     siteName: "Seeds of Goodness",
     images: [
       {
-        url: "https://seedsofgoodness.org/og.png", // Replace with your actual OG image
+        url: "https://seedsofgoodness.org/logo.png",
         width: 800,
         height: 630,
         alt: "Seeds of Goodness",
@@ -110,7 +109,7 @@ export const metadata: Metadata = {
     title: "News Article - Seeds of Goodness",
     description:
       "Read the latest news and updates from Seeds of Goodness. Learn about our humanitarian efforts and how we are making a difference in the lives of those in need.",
-    images: ["https://seedsofgoodness.org/og.png"], // Replace with your actual OG image
+    images: ["https://seedsofgoodness.org/logo.png"],
   },
 };
 
