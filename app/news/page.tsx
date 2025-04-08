@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -58,10 +57,10 @@ export default function NewsPage() {
                   key={article.id}
                   className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-brand-brown-200 rounded-xl"
                 >
-                  <div className="aspect-video w-full overflow-hidden">
+                  <div className="aspect-video w-full overflow-hidden relative">
                     {index === 0 ? (
                       <iframe
-                        className="w-full h-full"
+                        className="w-full h-full absolute inset-0"
                         src="https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ"
                         title="YouTube video player"
                         frameBorder="0"
@@ -70,10 +69,12 @@ export default function NewsPage() {
                         allowFullScreen
                       ></iframe>
                     ) : (
-                      <img
+                      <Image
                         src="/seedofg-pic1.jpg"
                         alt={article.title}
-                        className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 hover:scale-105"
                       />
                     )}
                   </div>

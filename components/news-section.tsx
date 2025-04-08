@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -49,10 +48,10 @@ export function NewsSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video w-full overflow-hidden rounded-lg mb-4">
+                <div className="aspect-video w-full overflow-hidden rounded-lg mb-4 relative">
                   {index === 0 ? (
                     <iframe
-                      className="w-full h-full"
+                      className="w-full h-full absolute inset-0"
                       src="https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ"
                       title="YouTube video player"
                       frameBorder="0"
@@ -61,10 +60,12 @@ export function NewsSection() {
                       allowFullScreen
                     ></iframe>
                   ) : (
-                    <img
+                    <Image
                       src="/seedofg-pic1.jpg"
                       alt={article.title}
-                      className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 hover:scale-105"
                     />
                   )}
                 </div>

@@ -7,7 +7,7 @@ import { CreditCard, Landmark } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { BankTransferDetails } from "@/components/bank-transfer-details";
-import { formatCurrency } from "@/lib/seo-config";
+import { formatCurrency } from "@/lib/utils";
 
 interface PaymentMethodsProps {
   amount: number;
@@ -24,9 +24,8 @@ interface PaymentMethodsProps {
  * 3. Bank Transfer
  *
  * Implementation Notes:
- * - For production, you'll need to set up Stripe and PayPal accounts
- * - Replace the placeholder functions with actual API calls
- * - Add proper error handling for payment failures
+ * - This is a simplified version for demonstration purposes
+ * - Actual payment processing will be implemented when client provides details
  */
 export function PaymentMethods({
   amount,
@@ -35,19 +34,6 @@ export function PaymentMethods({
 }: PaymentMethodsProps) {
   const [isProcessing, setIsProcessing] = useState(false);
 
-  /**
-   * Handle Stripe payment
-   *
-   * In production:
-   * 1. Call your backend API to create a payment intent
-   * 2. Use Stripe Elements or Checkout for secure card processing
-   * 3. Handle the payment result
-   *
-   * Implementation Guide:
-   * - Install @stripe/stripe-js and @stripe/react-stripe-js
-   * - Create a server endpoint to generate payment intents
-   * - Use Stripe Elements for PCI-compliant card collection
-   */
   const handleStripePayment = () => {
     setIsProcessing(true);
 
@@ -57,90 +43,16 @@ export function PaymentMethods({
       if (onPaymentComplete) onPaymentComplete();
       alert("Payment successful! Thank you for your donation.");
     }, 2000);
-
-    // PRODUCTION CODE WOULD LOOK LIKE:
-    /*
-    async function processPayment() {
-      try {
-        // 1. Create payment intent on your server
-        const response = await fetch('/api/create-payment-intent', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount, cause }),
-        });
-        
-        const { clientSecret } = await response.json();
-        
-        // 2. Confirm payment with Stripe.js
-        const stripe = await loadStripe('YOUR_PUBLISHABLE_KEY');
-        const { error } = await stripe.confirmCardPayment(clientSecret, {
-          payment_method: {
-            card: elements.getElement(CardElement),
-            billing_details: { name: 'Customer Name' },
-          },
-        });
-        
-        // 3. Handle result
-        if (error) {
-          console.error(error);
-          alert('Payment failed: ' + error.message);
-        } else {
-          if (onPaymentComplete) onPaymentComplete();
-        }
-      } catch (err) {
-        console.error(err);
-        alert('An error occurred during payment processing');
-      } finally {
-        setIsProcessing(false);
-      }
-    }
-    
-    processPayment();
-    */
   };
 
-  /**
-   * Handle PayPal payment
-   *
-   * In production:
-   * 1. Initialize PayPal Smart Buttons
-   * 2. Handle the payment approval
-   * 3. Verify the payment on your server
-   *
-   * Implementation Guide:
-   * - Create a PayPal developer account
-   * - Install @paypal/react-paypal-js
-   * - Use PayPalButtons component for integration
-   */
   const handlePayPalPayment = () => {
-    // This is just a placeholder for demonstration
-    alert("PayPal integration would be implemented here");
+    setIsProcessing(true);
 
-    // PRODUCTION CODE WOULD LOOK LIKE:
-    /*
-    <PayPalScriptProvider options={{ "client-id": "YOUR_PAYPAL_CLIENT_ID" }}>
-      <PayPalButtons
-        createOrder={(data, actions) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  value: amount.toString(),
-                  currency_code: "GBP"
-                },
-                description: `Donation to ${cause}`
-              },
-            ],
-          });
-        }}
-        onApprove={(data, actions) => {
-          return actions.order.capture().then((details) => {
-            if (onPaymentComplete) onPaymentComplete();
-          });
-        }}
-      />
-    </PayPalScriptProvider>
-    */
+    setTimeout(() => {
+      setIsProcessing(false);
+      if (onPaymentComplete) onPaymentComplete();
+      alert("PayPal payment successful! Thank you for your donation.");
+    }, 2000);
   };
 
   return (
@@ -240,8 +152,8 @@ export function PaymentMethods({
       <TabsContent value="paypal" className="mt-4 space-y-4">
         <div className="bg-brand-green-50 p-4 rounded-lg border border-brand-green-200">
           <p className="text-sm text-brand-brown-700">
-            Pay securely using your PayPal account. You`&apos;`ll be redirected
-            to PayPal to complete your payment.
+            Pay securely using your PayPal account. This is a demo version -
+            actual PayPal integration will be added soon.
           </p>
         </div>
 
@@ -254,16 +166,43 @@ export function PaymentMethods({
           <Button
             onClick={handlePayPalPayment}
             className="bg-[#0070ba] hover:bg-[#003087] text-white w-full py-6"
+            disabled={isProcessing}
           >
-            <span className="flex items-center">
-              <Image
-                src="/images/paypal-white.png"
-                alt="PayPal"
-                width={80}
-                height={20}
-                className="h-5 w-auto"
-              />
-            </span>
+            {isProcessing ? (
+              <span className="flex items-center justify-center">
+                <svg
+                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Processing...
+              </span>
+            ) : (
+              <span className="flex items-center justify-center">
+                <Image
+                  src="/paypal-white.png"
+                  alt="PayPal"
+                  width={80}
+                  height={20}
+                  className="h-5 w-auto"
+                />
+              </span>
+            )}
           </Button>
         </div>
       </TabsContent>
@@ -272,7 +211,7 @@ export function PaymentMethods({
         <div className="bg-brand-green-50 p-4 rounded-lg border border-brand-green-200 mb-4">
           <p className="text-sm text-brand-brown-700">
             Make a direct bank transfer to our account. Please use your name and
-            `&quot;`{cause}`&quot;` as the reference.
+            "{cause}" as the reference.
           </p>
         </div>
 

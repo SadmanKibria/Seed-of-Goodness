@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,6 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { getFeaturedCauses } from "@/lib/causes-data";
 import { formatCurrency } from "@/lib/utils";
-import Image from "next/image";
 
 export function FeaturedCauses() {
   const featuredCauses = getFeaturedCauses(3);
@@ -41,11 +41,13 @@ export function FeaturedCauses() {
                 key={cause.id}
                 className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border-brand-brown-200 rounded-xl"
               >
-                <div className="aspect-video w-full overflow-hidden">
+                <div className="aspect-video w-full overflow-hidden relative">
                   <Image
-                    src={cause.image || "/placeholder.svg"}
+                    src="/seedofg-pic1.jpg"
                     alt={cause.title}
-                    className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <CardHeader>

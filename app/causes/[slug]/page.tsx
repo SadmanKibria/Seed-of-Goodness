@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Calendar, Heart, Share2 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -9,7 +10,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { getCauseById } from "@/lib/causes-data";
 import { formatCurrency } from "@/lib/utils";
-import Image from "next/image";
+import { generateMetadata as genMeta } from "@/lib/seo-config";
 
 // Generate dynamic metadata for each cause
 export async function generateMetadata({
@@ -20,21 +21,13 @@ export async function generateMetadata({
   const cause = getCauseById(params.slug);
 
   if (!cause) {
-    return {
-      title: "Cause Not Found",
-      description: "The cause you're looking for doesn't exist.",
-    };
+    return genMeta(
+      "Cause Not Found",
+      "The cause you're looking for doesn't exist."
+    );
   }
 
-  return {
-    title: cause.title,
-    description: cause.description,
-    openGraph: {
-      title: cause.title,
-      description: cause.description,
-      url: `/causes/${params.slug}`,
-    },
-  };
+  return genMeta(cause.title, cause.description, `causes/${params.slug}`);
 }
 
 export default function CausePage({ params }: { params: { slug: string } }) {
@@ -47,7 +40,7 @@ export default function CausePage({ params }: { params: { slug: string } }) {
         <main className="flex-1 container py-12">
           <h1 className="text-3xl font-bold">Cause not found</h1>
           <p className="mt-4">
-            The cause you`&apos;`re looking for doesn`&apos;`t exist.
+            The cause you&apos;re looking for doesn&apos;t exist.
           </p>
           <Link href="/causes" className="mt-6 inline-block">
             <Button>Back to Causes</Button>
@@ -90,11 +83,14 @@ export default function CausePage({ params }: { params: { slug: string } }) {
           <div className="container px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-3 items-start">
               <div className="lg:col-span-2 space-y-8">
-                <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg">
+                <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg relative">
                   <Image
-                    src={cause.image || "/placeholder.svg"}
+                    src="/seedofg-pic1.jpg"
                     alt={cause.title}
-                    className="object-cover w-full h-full"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px"
+                    className="object-cover"
+                    priority
                   />
                 </div>
 

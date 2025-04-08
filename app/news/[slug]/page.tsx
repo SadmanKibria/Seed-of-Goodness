@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, ArrowLeft, Share2, Heart } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -8,13 +7,14 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
+// This would typically come from a database
 const newsData = {
   "ramadan-distribution-gaza": {
     title: "£3,000 Distributed in Gaza",
     description:
-      "Cash aid delivered directly to families in Gaza on 23rd Ramadan.",
+      "Cash aid delivered directly to families in Gaza during Ramadan.",
     content: `
-      <p>Our team on the ground in Gaza successfully distributed £3,000 in cash aid to families in need on the 23rd day of Ramadan, providing essential support during this difficult time.</p>
+      <p>Our team on the ground in Gaza successfully distributed £6,000 in cash aid to families in need on the 21st day of Ramadan, providing essential support during this difficult time.</p>
       
       <p>The distribution targeted the most vulnerable families, including those with elderly members, children, and individuals with disabilities. Each family received financial assistance to help cover their basic needs, including food, medicine, and other essentials.</p>
       
@@ -26,7 +26,7 @@ const newsData = {
       
       <p>We extend our heartfelt thanks to all our donors who made this distribution possible. Your generosity continues to make a real difference in the lives of those facing extreme hardship.</p>
     `,
-    date: "Ramadan 23, 2025",
+    date: "Ramadan 21, 2025",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
   },
@@ -173,10 +173,10 @@ export default function NewsArticlePage({
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="max-w-3xl mx-auto">
-              <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg mb-8">
+              <div className="aspect-video w-full overflow-hidden rounded-xl shadow-lg mb-8 relative">
                 {article.video ? (
                   <iframe
-                    className="w-full h-full"
+                    className="w-full h-full absolute inset-0"
                     src={article.video}
                     title="YouTube video player"
                     frameBorder="0"
@@ -185,10 +185,13 @@ export default function NewsArticlePage({
                     allowFullScreen
                   ></iframe>
                 ) : (
-                  <img
+                  <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
-                    className="object-cover w-full h-full"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
+                    className="object-cover"
+                    priority
                   />
                 )}
               </div>

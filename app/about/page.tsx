@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-
 import { Heart } from "lucide-react";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 import { QuoteCard } from "@/components/quote-card";
@@ -54,15 +53,18 @@ export default function AboutPage() {
                 </p>
                 <p className="text-brand-brown-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Our work is guided by the Islamic principles of compassion,
-                  justice, and dignity for all human beings, regardless of race,
+                  justice and dignity for all human beings, regardless of race,
                   religion, or nationality.
                 </p>
               </div>
-              <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg">
-                <img
+              <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg relative">
+                <Image
                   alt="Seeds of Goodness charity work"
-                  className="object-cover w-full h-full"
                   src="/seedofg-pic1.jpg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -72,11 +74,13 @@ export default function AboutPage() {
         <section className="w-full py-12 md:py-24 lg:py-32 bg-brand-green-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg order-2 lg:order-1">
-                <img
+              <div className="mx-auto w-full max-w-[500px] aspect-video overflow-hidden rounded-xl shadow-lg order-2 lg:order-1 relative">
+                <Image
                   alt="Seeds of Goodness team members"
-                  className="object-cover w-full h-full"
                   src="/seedofg-pic1.jpg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
+                  className="object-cover"
                 />
               </div>
               <div className="space-y-4 order-1 lg:order-2">
