@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { Heart } from "lucide-react";
 import type { Metadata } from "next";
 

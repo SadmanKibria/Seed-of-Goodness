@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from "next/link";
 import { Calendar, ArrowLeft, Share2, Heart } from "lucide-react";
 import type { Metadata } from "next";
@@ -126,7 +128,9 @@ export default function NewsArticlePage({
         <SiteHeader />
         <main className="flex-1 container py-12">
           <h1 className="text-3xl font-bold">Article not found</h1>
-          <p className="mt-4">The article you're looking for doesn't exist.</p>
+          <p className="mt-4">
+            The article you&apos;re looking for doesn&apos;t exist.
+          </p>
           <Link href="/news" className="mt-6 inline-block">
             <Button>Back to News</Button>
           </Link>

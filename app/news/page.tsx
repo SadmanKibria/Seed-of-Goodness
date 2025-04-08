@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from "next/link";
 import { Calendar, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
