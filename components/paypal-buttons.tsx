@@ -34,10 +34,7 @@ export function PayPalButtons({
               shape: "rect",
               label: "paypal",
             },
-            createOrder: (
-              data: Record<string, unknown>,
-              actions: paypal.Actions
-            ) => {
+            createOrder: (data: Record<string, unknown>, actions: any) => {
               return actions.order.create({
                 purchase_units: [
                   {
@@ -52,10 +49,7 @@ export function PayPalButtons({
                 },
               });
             },
-            onApprove: (
-              data: Record<string, unknown>,
-              actions: paypal.Actions
-            ) => {
+            onApprove: (data: Record<string, unknown>, actions: any) => {
               return actions.order.capture().then(() => {
                 alert("Transaction completed! Thank you for your donation.");
               });
