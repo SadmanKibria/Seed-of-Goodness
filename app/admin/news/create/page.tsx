@@ -29,7 +29,6 @@ export default function CreateNewsPage() {
     setTimeout(() => {
       alert("News article created successfully!");
       setIsSubmitting(false);
-      // In a real application, you would redirect to the news list page
     }, 1500);
   };
 

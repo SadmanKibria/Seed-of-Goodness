@@ -11,7 +11,7 @@ export const siteConfig = {
   // Basic site information
   name: "Seeds of Goodness",
   url: "https://seedsofgoodness.org",
-  ogImage: "https://seedsofgoodness.org/og-image.jpg",
+  ogImage: "https://seedsofgoodness.org/logo.png",
   description:
     "Islamic charity dedicated to providing humanitarian aid to those in need, with a focus on Gaza emergency relief.",
 

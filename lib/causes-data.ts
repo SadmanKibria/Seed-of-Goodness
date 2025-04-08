@@ -8,6 +8,8 @@ export interface Cause {
   title: string;
   description: string;
   image: string;
+  width: number;
+  height: number;
   raised: number;
   goal: number;
   isUrgent: boolean;
@@ -27,8 +29,9 @@ export const causesData: Record<string, Cause> = {
     title: "Gaza Emergency Relief",
     description:
       "Providing essential aid to families affected by the humanitarian crisis in Gaza.",
-    image:
-      "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 245000,
     goal: 500000,
     isUrgent: true,
@@ -56,8 +59,9 @@ export const causesData: Record<string, Cause> = {
     title: "Clean Water Initiative",
     description:
       "Building wells and water systems in areas suffering from water scarcity.",
-    image:
-      "https://images.unsplash.com/photo-1594789020554-458e5c6a0dae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 120000,
     goal: 200000,
     isUrgent: false,
@@ -85,8 +89,9 @@ export const causesData: Record<string, Cause> = {
     title: "Food Security Program",
     description:
       "Distributing food packages to families facing hunger and food insecurity.",
-    image:
-      "https://images.unsplash.com/photo-1584263347416-85a696b4eda7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 70000,
     goal: 120000,
     isUrgent: false,
@@ -114,8 +119,9 @@ export const causesData: Record<string, Cause> = {
     title: "Medical Aid",
     description:
       "Providing essential medical supplies and healthcare services to underserved communities.",
-    image:
-      "https://images.unsplash.com/photo-1631815588090-d1bcbe9a8545?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 95000,
     goal: 180000,
     isUrgent: false,
@@ -143,8 +149,9 @@ export const causesData: Record<string, Cause> = {
     title: "Hygiene Products",
     description:
       "Distributing essential hygiene kits to maintain health and dignity in crisis situations.",
-    image:
-      "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 65000,
     goal: 150000,
     isUrgent: false,
@@ -172,8 +179,9 @@ export const causesData: Record<string, Cause> = {
     title: "Clothing & Shelter",
     description:
       "Providing clothing and temporary shelter for displaced families.",
-    image:
-      "https://images.unsplash.com/photo-1469571486292-b53601010b89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 55000,
     goal: 120000,
     isUrgent: false,
@@ -201,8 +209,9 @@ export const causesData: Record<string, Cause> = {
     title: "Education Support",
     description:
       "Providing educational resources and support for children in crisis-affected areas.",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    width: 640,
+    height: 427,
     raised: 85000,
     goal: 200000,
     isUrgent: false,

@@ -11,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { getRecentNews } from "@/lib/news-data";
-import Image from "next/image";
 
 export function NewsSection() {
   const recentNews = getRecentNews(3);
@@ -30,7 +29,7 @@ export function NewsSection() {
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          {recentNews.map((article) => (
+          {recentNews.map((article, index) => (
             <Card
               key={article.id}
               className="shadow-md hover:shadow-lg transition-shadow duration-300 border-brand-brown-200 rounded-xl"
@@ -49,11 +48,23 @@ export function NewsSection() {
               </CardHeader>
               <CardContent>
                 <div className="aspect-video w-full overflow-hidden rounded-lg mb-4">
-                  <Image
-                    src={article.image || "/placeholder.svg"}
-                    alt={article.title}
-                    className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-                  />
+                  {index === 0 ? (
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <img
+                      src="/seedofg-pic1.jpg"
+                      alt={article.title}
+                      className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                    />
+                  )}
                 </div>
                 <p className="text-brand-brown-600 line-clamp-3">
                   {article.description}

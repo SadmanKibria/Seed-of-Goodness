@@ -28,12 +28,24 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       <SiteHeader />
       <main className="flex-1">
-        {/* Hero Section */}
-        {/*
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-brand-green-50 to-white">
-          <div className="container px-4 md:px-6">
+        {/* Hero Section with Video Background */}
+        <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
+          {/* Video Background with stronger overlay */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden bg-black/50 z-0">
+            <iframe
+              className="w-[177.77vh] h-screen md:w-full md:h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              src="https://www.youtube.com/embed/9Ap8qz9Lcsk?autoplay=1&mute=1&loop=1&playlist=9Ap8qz9Lcsk&controls=0&modestbranding=1&showinfo=0&rel=0"
+              title="Background Video"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            ></iframe>
+          </div>
+
+          {/* Content overlay */}
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
+              <div className="space-y-4 bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg">
                 <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-600 mb-2">
                   Urgent Appeal
                 </div>
@@ -61,76 +73,6 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-              <div className="mx-auto w-full max-w-[720px] aspect-video overflow-hidden rounded-xl shadow-lg">
-                {/* 
-                 <img
-                  alt="Children receiving humanitarian aid in Gaza"
-                  className="object-cover w-full h-full"
-                  src="https://images.unsplash.com/photo-1469571486292-b53601010b89?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                /> 
-                */}
-        {/*
-                <iframe
-                  width="720"
-                  height="405"
-                  src="https://www.youtube.com/embed/9Ap8qz9Lcsk?si=9n2wWSOfq-6vKC8i"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        */}
-
-        <section className="relative w-full h-screen overflow-hidden">
-          {/* Background Video */}
-          <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
-            <div className="absolute inset-0 w-full h-full">
-              <iframe
-                className="w-[177.77vh] h-screen md:w-full md:h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-                src="https://www.youtube.com/embed/9Ap8qz9Lcsk?autoplay=1&mute=1&loop=1&playlist=9Ap8qz9Lcsk&controls=0&modestbranding=1&showinfo=0&rel=0"
-                title="Background Video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          {/* Hero Content */}
-          <div className="relative z-10 container h-full px-4 md:px-6 flex items-center">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center text-white">
-              <div className="space-y-4 text-center sm:text-left">
-                <div className="inline-block rounded-lg bg-red-600 px-3 py-1 text-sm font-medium shadow-md">
-                  Urgent Appeal
-                </div>
-                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl leading-tight">
-                  Supporting Those in Need in Gaza
-                </h1>
-                <p className="text-white/90 text-base sm:text-lg md:text-xl max-w-xl mx-auto sm:mx-0">
-                  Seeds of Goodness is dedicated to providing humanitarian aid
-                  to those affected by crisis and conflict. Our team is on the
-                  ground in Gaza delivering essential support.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 mt-4">
-                  <Link href="/donate">
-                    <Button className="bg-brand-green-600 hover:bg-brand-green-700 text-white px-8 py-4 text-lg shadow-lg">
-                      Donate Now
-                    </Button>
-                  </Link>
-                  <Link href="/causes">
-                    <Button className="bg-white text-brand-green-700 hover:bg-brand-green-100 px-8 py-4 text-lg shadow-lg border border-white/20">
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -151,13 +93,13 @@ export default function HomePage() {
                 <p className="max-w-[900px] text-brand-brown-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Families in Gaza are facing a humanitarian crisis. Your
                   donation can provide essential food, clean water, medical
-                  supplies and shelter to those affected.
+                  supplies, and shelter to those affected.
                 </p>
               </div>
               <div className="w-full max-w-md space-y-2">
                 <div className="flex justify-between text-sm">
-                  <div>Raised: {formatCurrency(24500)}</div>
-                  <div>Goal: {formatCurrency(50000)}</div>
+                  <div>Raised: {formatCurrency(245000)}</div>
+                  <div>Goal: {formatCurrency(500000)}</div>
                 </div>
                 <Progress value={49} className="h-2 w-full bg-brand-brown-100">
                   <div className="h-full bg-brand-green-500 rounded-full"></div>
@@ -241,73 +183,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Impact Section */}
-        {/*
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-brand-brown-800">
-                  Our Impact
-                </h2>
-                <p className="max-w-[900px] text-brand-brown-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Through the generosity of our donors, we&apos;ve been able to
-                  make a real difference in communities worldwide.
-                </p>
-              </div>
-              <div className="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-                <div className="flex flex-col items-center space-y-2">
-                  <Home className="h-10 w-10 text-brand-green-600" />
-                  <h3 className="text-xl font-bold text-brand-brown-700">
-                    1,200+
-                  </h3>
-                  <p className="text-sm text-brand-brown-500">Shelters Built</p>
-                </div>
-                <div className="flex flex-col items-center space-y-2">
-                  <Users className="h-10 w-10 text-brand-green-600" />
-                  <h3 className="text-xl font-bold text-brand-brown-700">
-                    50,000+
-                  </h3>
-                  <p className="text-sm text-brand-brown-500">People Helped</p>
-                </div>
-                <div className="flex flex-col items-center space-y-2">
-                  <MessageCircle className="h-10 w-10 text-brand-green-600" />
-                  <h3 className="text-xl font-bold text-brand-brown-700">
-                    25+
-                  </h3>
-                  <p className="text-sm text-brand-brown-500">
-                    Countries Reached
-                  </p>
-                </div>
-                <div className="flex flex-col items-center space-y-2">
-                  <Heart className="h-10 w-10 text-brand-green-600" />
-                  <h3 className="text-xl font-bold text-brand-brown-700">
-                    10,000+
-                  </h3>
-                  <p className="text-sm text-brand-brown-500">
-                    Donors Worldwide
-                  </p>
-                </div>
-                <div className="mx-auto  max-w-[720px] aspect-video overflow-hidden rounded-xl shadow-lg">
-                  <iframe
-                    width="720"
-                    height="405"
-                    src="https://www.youtube.com/embed/_7L8L7LKwn4?si=ee7U5jeu6ds9onyk"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>*/}
-
-        <section className="relative w-full h-[65vh] overflow-hidden">
-          {/* Background Video */}
-          <div className="absolute inset-0 z-0">
+        {/* Impact Section with Video Background */}
+        <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
+          {/* Video Background with stronger overlay */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden bg-black/60 z-0">
             <iframe
               className="w-full h-full pointer-events-none"
               src="https://www.youtube.com/embed/_7L8L7LKwn4?autoplay=1&mute=1&loop=1&playlist=_7L8L7LKwn4&controls=0&modestbranding=1&showinfo=0&rel=0"
@@ -316,36 +195,41 @@ export default function HomePage() {
               allow="autoplay; encrypted-media"
               allowFullScreen
             ></iframe>
-            <div className="absolute inset-0 bg-black/40" />
           </div>
 
-          {/* Foreground Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Impact</h2>
-            <p className="max-w-xl text-lg md:text-xl mb-10">
-              Through the generosity of our donors, we&apos;ve been able to make
-              a real difference in communities worldwide.
-            </p>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="flex flex-col items-center">
-                <Home className="h-10 w-10 text-green-300" />
-                <h3 className="text-xl font-bold mt-2">1,200+</h3>
-                <p className="text-sm">Shelters Built</p>
+          {/* Content overlay */}
+          <div className="container px-4 md:px-6 relative z-10">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+                  Our Impact
+                </h2>
+                <p className="max-w-[900px] text-white/90 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Through the generosity of our donors, we&apos;ve been able to
+                  make a real difference in communities worldwide.
+                </p>
               </div>
-              <div className="flex flex-col items-center">
-                <Users className="h-10 w-10 text-green-300" />
-                <h3 className="text-xl font-bold mt-2">50,000+</h3>
-                <p className="text-sm">People Helped</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <MessageCircle className="h-10 w-10 text-green-300" />
-                <h3 className="text-xl font-bold mt-2">25+</h3>
-                <p className="text-sm">Countries Reached</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <Heart className="h-10 w-10 text-green-300" />
-                <h3 className="text-xl font-bold mt-2">10,000+</h3>
-                <p className="text-sm">Donors Worldwide</p>
+              <div className="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mt-8">
+                <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <Home className="h-10 w-10 text-brand-green-400" />
+                  <h3 className="text-xl font-bold text-white">1,200+</h3>
+                  <p className="text-sm text-white/80">Shelters Built</p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <Users className="h-10 w-10 text-brand-green-400" />
+                  <h3 className="text-xl font-bold text-white">50,000+</h3>
+                  <p className="text-sm text-white/80">People Helped</p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <MessageCircle className="h-10 w-10 text-brand-green-400" />
+                  <h3 className="text-xl font-bold text-white">25+</h3>
+                  <p className="text-sm text-white/80">Countries Reached</p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                  <Heart className="h-10 w-10 text-brand-green-400" />
+                  <h3 className="text-xl font-bold text-white">10,000+</h3>
+                  <p className="text-sm text-white/80">Donors Worldwide</p>
+                </div>
               </div>
             </div>
           </div>

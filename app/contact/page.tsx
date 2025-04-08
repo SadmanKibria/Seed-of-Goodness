@@ -26,7 +26,7 @@ export default function ContactPage() {
                   Contact Us
                 </h1>
                 <p className="max-w-[900px] text-brand-brown-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We`&apos;`d love to hear from you. Get in touch with our team.
+                  We'd love to hear from you. Get in touch with our team.
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
 /**
  * Data for news articles
- * This centralised data store makes it easy to manage all news content
+ * This centralized data store makes it easy to manage all news content
  */
 
 export interface NewsArticle {
@@ -10,6 +10,7 @@ export interface NewsArticle {
   content: string;
   date: string;
   image: string;
+  video?: string;
   author?: string;
   tags?: string[];
 }
@@ -34,8 +35,8 @@ export const newsData: Record<string, NewsArticle> = {
         <p>We extend our heartfelt thanks to all our donors who made this distribution possible. Your generosity continues to make a real difference in the lives of those facing extreme hardship.</p>
       `,
     date: "Ramadan 21, 2024",
-    image:
-      "https://images.unsplash.com/photo-1603796846097-bee99e4a601f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
     author: "Seeds of Goodness Team",
     tags: ["Gaza", "Emergency Relief", "Ramadan", "Cash Aid"],
   },
@@ -58,8 +59,8 @@ export const newsData: Record<string, NewsArticle> = {
         <p>We remain committed to supporting the people of Gaza during this difficult time and will continue our efforts to provide essential aid to those in need. Your continued support makes these distributions possible, and we are deeply grateful for your generosity.</p>
       `,
     date: "April 8, 2024",
-    image:
-      "https://images.unsplash.com/photo-1584263347416-85a696b4eda7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
     author: "Seeds of Goodness Team",
     tags: ["Gaza", "Food Security", "Emergency Relief"],
   },
@@ -82,8 +83,8 @@ export const newsData: Record<string, NewsArticle> = {
         <p>We remain committed to supporting healthcare in Gaza and will continue our efforts to deliver medical supplies to those in need. Your donations make these deliveries possible, and we are deeply grateful for your support.</p>
       `,
     date: "April 1, 2024",
-    image:
-      "https://images.unsplash.com/photo-1631815588090-d1bcbe9a8545?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
+    video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
     author: "Seeds of Goodness Team",
     tags: ["Gaza", "Medical Aid", "Healthcare", "Emergency Relief"],
   },
@@ -106,8 +107,7 @@ export const newsData: Record<string, NewsArticle> = {
         <p>This project was made possible through the generous donations of our supporters. Your contributions are making a tangible difference in the lives of communities around the world, and we are deeply grateful for your support.</p>
       `,
     date: "March 15, 2024",
-    image:
-      "https://images.unsplash.com/photo-1594789020554-458e5c6a0dae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
     author: "Seeds of Goodness Team",
     tags: ["Water", "Development", "Community"],
   },
@@ -138,8 +138,7 @@ export const newsData: Record<string, NewsArticle> = {
         <p>We invite our supporters to join us in this important initiative. Your donations will help provide educational opportunities for children who might otherwise be denied this fundamental right.</p>
       `,
     date: "February 28, 2024",
-    image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image: "/seedofg-pic1.jpg",
     author: "Seeds of Goodness Team",
     tags: ["Education", "Children", "Development"],
   },

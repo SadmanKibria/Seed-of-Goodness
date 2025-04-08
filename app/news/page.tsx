@@ -51,17 +51,29 @@ export default function NewsPage() {
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {newsArticles.map((article) => (
+              {newsArticles.map((article, index) => (
                 <Card
                   key={article.id}
                   className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border-brand-brown-200 rounded-xl"
                 >
                   <div className="aspect-video w-full overflow-hidden">
-                    <img
-                      src={article.image || "/placeholder.svg"}
-                      alt={article.title}
-                      className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-                    />
+                    {index === 0 ? (
+                      <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <img
+                        src="/seedofg-pic1.jpg"
+                        alt={article.title}
+                        className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
+                      />
+                    )}
                   </div>
                   <CardHeader>
                     <div className="flex items-center text-sm text-brand-brown-500 mb-2">

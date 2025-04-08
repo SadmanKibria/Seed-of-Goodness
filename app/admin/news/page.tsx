@@ -15,7 +15,6 @@ import {
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
-// This would typically come from a database or CMS
 const initialNewsData = [
   {
     id: "ramadan-distribution-gaza",
