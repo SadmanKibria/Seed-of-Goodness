@@ -211,7 +211,7 @@ export function PaymentMethods({
         <div className="bg-brand-green-50 p-4 rounded-lg border border-brand-green-200 mb-4">
           <p className="text-sm text-brand-brown-700">
             Make a direct bank transfer to our account. Please use your name and
-            "{cause}" as the reference.
+            &quot;&quot;{cause} &quot;&quot; as the reference.
           </p>
         </div>
 
