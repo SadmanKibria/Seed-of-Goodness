@@ -28,18 +28,15 @@ export default function HomePage() {
     <div className="flex flex-col min-h-screen">
       <SiteHeader />
       <main className="flex-1">
-        {/* Hero Section with Video Background */}
+        {/* Hero Section with Image Background */}
         <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-          {/* Video Background with stronger overlay */}
+          {/* Background Image instead of Video */}
           <div className="absolute inset-0 w-full h-full overflow-hidden bg-black/50 z-0">
-            <iframe
-              className="w-[177.77vh] h-screen md:w-full md:h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              src="https://www.youtube.com/embed/9Ap8qz9Lcsk?autoplay=1&mute=1&loop=1&playlist=9Ap8qz9Lcsk&controls=0&modestbranding=1&showinfo=0&rel=0"
-              title="Background Video"
-              frameBorder="0"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
+            <img
+              src="/pics/4.png"
+              alt="Seeds of Goodness - Hero Background"
+              className="object-cover w-full h-full"
+            />
           </div>
 
           {/* Content overlay */}
