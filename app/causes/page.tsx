@@ -16,9 +16,8 @@ import { Progress } from "@/components/ui/progress";
 import { QuoteCard } from "@/components/quote-card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { getAllCauses } from "@/lib/causes-data";
-import { generateMetadata } from "@/lib/seo-config";
 import { formatCurrency } from "@/lib/utils";
+import { generateMetadata } from "@/lib/seo-config";
 
 // Generate metadata for this page
 export const metadata: Metadata = generateMetadata(
@@ -27,9 +26,43 @@ export const metadata: Metadata = generateMetadata(
   "causes"
 );
 
-export default function CausesPage() {
-  const causes = getAllCauses();
+// Manually define the 4 real causes
+const causes = [
+  {
+    id: "food",
+    title: "Food Project",
+    description: "Providing food packages to families facing hunger.",
+    raised: 35000,
+    goal: 50000,
+    image: "/pics/7.png",
+  },
+  {
+    id: "water",
+    title: "Water Project",
+    description: "Supplying clean drinking water to those in need.",
+    raised: 8000,
+    goal: 20000,
+    image: "/pics/17.png",
+  },
+  {
+    id: "medical",
+    title: "Medicine Project",
+    description: "Providing medical aid to underserved communities.",
+    raised: 10000,
+    goal: 25000,
+    image: "/pics/3.png",
+  },
+  {
+    id: "others",
+    title: "Other Support",
+    description: "Supporting various urgent humanitarian needs.",
+    raised: 10000,
+    goal: 15000,
+    image: "/pics/1.png",
+  },
+];
 
+export default function CausesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <SiteHeader />
@@ -54,7 +87,7 @@ export default function CausesPage() {
 
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
               {causes.map((cause) => {
                 const progress = Math.round((cause.raised / cause.goal) * 100);
 
@@ -65,7 +98,7 @@ export default function CausesPage() {
                   >
                     <div className="aspect-video w-full overflow-hidden relative">
                       <Image
-                        src="/seedofg-pic1.jpg"
+                        src={cause.image}
                         alt={cause.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -73,11 +106,6 @@ export default function CausesPage() {
                       />
                     </div>
                     <CardHeader>
-                      {cause.isUrgent && (
-                        <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-600 mb-2">
-                          Urgent
-                        </div>
-                      )}
                       <CardTitle className="text-brand-brown-800">
                         {cause.title}
                       </CardTitle>
