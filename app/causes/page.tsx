@@ -17,50 +17,18 @@ import { QuoteCard } from "@/components/quote-card";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { formatCurrency } from "@/lib/utils";
+import { getAllCauses } from "@/lib/causes-data";
 import { generateMetadata } from "@/lib/seo-config";
 
-// Generate metadata for this page
 export const metadata: Metadata = generateMetadata(
   "Our Causes",
   "Explore the humanitarian causes supported by Seeds of Goodness and learn how you can contribute to making a difference.",
   "causes"
 );
 
-// Manually define the 4 real causes
-const causes = [
-  {
-    id: "food",
-    title: "Food Project",
-    description: "Providing food packages to families facing hunger.",
-    raised: 35000,
-    goal: 50000,
-    image: "/pics/7.png",
-  },
-  {
-    id: "water",
-    title: "Water Project",
-    description: "Supplying clean drinking water to those in need.",
-    raised: 8000,
-    goal: 20000,
-    image: "/pics/17.png",
-  },
-  {
-    id: "medical",
-    title: "Medicine Project",
-    description: "Providing medical aid to underserved communities.",
-    raised: 10000,
-    goal: 25000,
-    image: "/pics/3.png",
-  },
-  {
-    id: "others",
-    title: "Other Support",
-    description: "Supporting various urgent humanitarian needs.",
-    raised: 10000,
-    goal: 15000,
-    image: "/pics/1.png",
-  },
-];
+const causes = getAllCauses().filter((cause) =>
+  ["food", "water", "medical", "others"].includes(cause.id)
+);
 
 export default function CausesPage() {
   return (
@@ -69,16 +37,13 @@ export default function CausesPage() {
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-brand-green-50">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-brand-brown-800">
-                  Our Causes
-                </h1>
-                <p className="max-w-[900px] text-brand-brown-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Support our humanitarian initiatives and make a difference in
-                  the lives of those in need.
-                </p>
-              </div>
+            <div className="flex flex-col items-center text-center space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl text-brand-brown-800">
+                Our Causes
+              </h1>
+              <p className="max-w-[900px] text-brand-brown-600 md:text-xl">
+                Support our humanitarian initiatives and make a difference.
+              </p>
             </div>
           </div>
         </section>
