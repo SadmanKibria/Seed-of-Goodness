@@ -12,12 +12,44 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { getFeaturedCauses } from "@/lib/causes-data";
 import { formatCurrency } from "@/lib/utils";
 
-export function FeaturedCauses() {
-  const featuredCauses = getFeaturedCauses(3);
+const causes = [
+  {
+    id: "food",
+    title: "Food Project",
+    description: "Providing food packages to families facing hunger.",
+    raised: 35000,
+    goal: 50000,
+    image: "/pics/7.png",
+  },
+  {
+    id: "water",
+    title: "Water Project",
+    description: "Supplying clean drinking water to those in need.",
+    raised: 8000,
+    goal: 20000,
+    image: "/pics/17.png",
+  },
+  {
+    id: "medical",
+    title: "Medicine Project",
+    description: "Providing medical aid to underserved communities.",
+    raised: 10000,
+    goal: 25000,
+    image: "/pics/3.png",
+  },
+  {
+    id: "others",
+    title: "Other Support",
+    description: "Supporting various urgent humanitarian needs.",
+    raised: 10000,
+    goal: 15000,
+    image: "/pics/1.png",
+  },
+];
 
+export function FeaturedCauses() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
@@ -32,8 +64,8 @@ export function FeaturedCauses() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          {featuredCauses.map((cause) => {
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 mt-8">
+          {causes.map((cause) => {
             const progress = Math.round((cause.raised / cause.goal) * 100);
 
             return (
@@ -43,7 +75,7 @@ export function FeaturedCauses() {
               >
                 <div className="aspect-video w-full overflow-hidden relative">
                   <Image
-                    src="/seedofg-pic1.jpg"
+                    src={cause.image}
                     alt={cause.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -51,11 +83,6 @@ export function FeaturedCauses() {
                   />
                 </div>
                 <CardHeader>
-                  {cause.isUrgent && (
-                    <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-600 mb-2">
-                      Urgent
-                    </div>
-                  )}
                   <CardTitle className="text-brand-brown-800">
                     {cause.title}
                   </CardTitle>
@@ -88,17 +115,6 @@ export function FeaturedCauses() {
               </Card>
             );
           })}
-        </div>
-        <div className="flex justify-center mt-8">
-          <Link href="/causes">
-            <Button
-              variant="outline"
-              className="rounded-lg border-2 border-brand-brown-300 text-brand-brown-700 hover:bg-brand-green-50 hover:border-brand-green-300 transition-all duration-300"
-            >
-              View All Causes
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
         </div>
       </div>
     </section>
