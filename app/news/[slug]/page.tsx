@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ShareButton } from "@/components/ShareButton";
-import { getAllNews, getNewsById } from "@/lib/news-data";
+import { getNewsById } from "@/lib/news-data";
 import { generateMetadata as genMeta } from "@/lib/seo-config";
 
 // Dynamic metadata for each news article
