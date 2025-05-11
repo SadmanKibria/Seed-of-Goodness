@@ -13,7 +13,13 @@ export interface Cause {
   goal: number;
   isUrgent: boolean;
   content: string;
-  category: "emergency" | "water" | "food" | "medical" | "others";
+  category:
+    | "emergency"
+    | "water"
+    | "food"
+    | "medical"
+    | "others"
+    | "international";
 }
 
 // 📋 Updated Causes
@@ -26,8 +32,8 @@ export const causesData: Record<string, Cause> = {
     image: "/pics/7.png",
     width: 640,
     height: 427,
-    raised: 35000,
-    goal: 50000,
+    raised: 43000,
+    goal: 80000,
     isUrgent: true,
     category: "food",
     content: `
@@ -45,7 +51,7 @@ export const causesData: Record<string, Cause> = {
     width: 640,
     height: 427,
     raised: 8000,
-    goal: 20000,
+    goal: 100000,
     isUrgent: false,
     category: "water",
     content: `
@@ -62,8 +68,8 @@ export const causesData: Record<string, Cause> = {
     image: "/pics/3.png",
     width: 640,
     height: 427,
-    raised: 10000,
-    goal: 25000,
+    raised: 8000,
+    goal: 50000,
     isUrgent: true,
     category: "medical",
     content: `
@@ -76,7 +82,7 @@ export const causesData: Record<string, Cause> = {
     id: "others",
     title: "Other Humanitarian Support",
     description:
-      "Supporting shelter, clothing, hygiene, and urgent needs in Gaza.",
+      "Supporting shelter, clothing, hygiene and urgent needs in Gaza.",
     image: "/pics/1.png",
     width: 640,
     height: 427,
@@ -84,6 +90,24 @@ export const causesData: Record<string, Cause> = {
     goal: 15000,
     isUrgent: false,
     category: "others",
+    content: `
+      <p>Alongside food, water and medical aid, thousands require basic necessities like warm clothing, hygiene kits and emergency shelter materials.</p>
+      
+      <p>Your contribution supports widowed mothers, orphaned children and families left homeless. From tents to soap, blankets to dignity kits every donation brings relief, restores dignity and reminds them they are not forgotten by the world.</p>
+    `,
+  },
+  international: {
+    id: "international",
+    title: "International Humanitarian Support",
+    description:
+      "Supporting shelter, clothing, hygiene and urgent needs worldwide.",
+    image: "/pics/1.png",
+    width: 640,
+    height: 427,
+    raised: 0,
+    goal: 50000,
+    isUrgent: false,
+    category: "international",
     content: `
       <p>Alongside food, water and medical aid, thousands require basic necessities like warm clothing, hygiene kits and emergency shelter materials.</p>
       
