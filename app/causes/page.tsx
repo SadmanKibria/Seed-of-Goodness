@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetadata(
 );
 
 const causes = getAllCauses().filter((cause) =>
-  ["food", "water", "medical", "others"].includes(cause.id)
+  ["food", "water", "medical", "others", "international"].includes(cause.id)
 );
 
 export default function CausesPage() {

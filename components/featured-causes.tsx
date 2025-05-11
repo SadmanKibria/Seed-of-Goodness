@@ -47,6 +47,15 @@ const causes = [
     goal: 15000,
     image: "/pics/1.png",
   },
+  {
+    id: "international",
+    title: "International Humanitarian Support",
+    description:
+      "Supporting shelter, clothing, hygiene and urgent needs worldwide.",
+    raised: 0,
+    goal: 50000,
+    image: "/pics/11.png",
+  },
 ];
 
 export function FeaturedCauses() {

@@ -23,7 +23,7 @@ export const newsData: Record<string, NewsArticle> = {
       <p>This effort brought immediate relief to families with young children, the elderly and people with health conditions during a critical time.</p>
       <p>Thanks to our donors, your support continues to create real impact on the ground in Gaza. May Allah reward you all.</p>
     `,
-    date: "Ramadan 23, 2025",
+    date: "2025-03-23",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/aspeHy7lAe4?si=PGcvS896OOcPv6vZ",
     author: "Seeds of Goodness Team",
@@ -39,14 +39,14 @@ export const newsData: Record<string, NewsArticle> = {
       <p>Each food pack contained essentials for families, helping sustain them during Ramadan and beyond.</p>
       <p>Your donations truly save lives. Thank you for your support.</p>
     `,
-    date: "Ramadan 21, 2025",
+    date: "2025-03-21",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/_7L8L7LKwn4?si=bDgbfR3-rOBtR7V0",
     author: "Seeds of Goodness Team",
     tags: ["Gaza", "Food Security", "Emergency"],
   },
   "emergency-food-distribution11April2025": {
-    id: "emergency-food-distribution",
+    id: "emergency-food-distribution11April2025",
     title: "£8,000 Emergency Food Aid",
     description:
       "Food packages delivered to families in urgent need across Gaza.",
@@ -55,7 +55,7 @@ export const newsData: Record<string, NewsArticle> = {
       <p>Each food pack contained essentials for families, helping sustain them.</p>
       <p>Your donations truly save lives. Thank you for your support.</p>
     `,
-    date: "11 April, 2025",
+    date: "2025-04-11",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/6i8yyzRUtB8?si=s9YaArJQOpMZSRsL",
     author: "Seeds of Goodness Team",
@@ -70,7 +70,7 @@ export const newsData: Record<string, NewsArticle> = {
       <p>In a region where healthcare is overwhelmed, every box of supplies is a lifeline.</p>
       <p>May Allah accept your contribution towards saving lives. Ameen.</p>
     `,
-    date: "Ramadan 20, 2025",
+    date: "2025-03-20",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/9Ap8qz9Lcsk?si=X_zh1H056y3bIkIJ",
     author: "Seeds of Goodness Team",
