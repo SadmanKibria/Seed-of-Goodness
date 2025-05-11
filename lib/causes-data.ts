@@ -101,7 +101,7 @@ export const causesData: Record<string, Cause> = {
     title: "International Humanitarian Support",
     description:
       "Supporting shelter, clothing, hygiene and urgent needs worldwide.",
-    image: "/pics/1.png",
+    image: "/pics/11.png",
     width: 640,
     height: 427,
     raised: 0,
