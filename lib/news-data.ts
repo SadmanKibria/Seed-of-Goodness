@@ -31,9 +31,8 @@ export const newsData: Record<string, NewsArticle> = {
   },
   "emergency-food-distribution": {
     id: "emergency-food-distribution",
-    title: "£6,000 Emergency Food Aid",
-    description:
-      "Food packages delivered to families in urgent need across Gaza.",
+    title: "£6,000 Cash Distribution Aid",
+    description: "Cash distributed to families in urgent need across Gaza.",
     content: `
       <p>On Ramadan 21st, our Seeds of Goodness team distributed £6,000 worth of nutritious food packs to those facing hunger during the humanitarian crisis in Gaza.</p>
       <p>Each food pack contained essentials for families, helping sustain them during Ramadan and beyond.</p>
@@ -47,15 +46,14 @@ export const newsData: Record<string, NewsArticle> = {
   },
   "emergency-food-distribution11April2025": {
     id: "emergency-food-distribution11April2025",
-    title: "£8,000 Emergency Food Aid",
-    description:
-      "Food packages delivered to families in urgent need across Gaza.",
+    title: "£3,000 Water Distribution Aid",
+    description: "Water distributed to families in urgent need across Gaza.",
     content: `
-      <p>On 11 April, our Seeds of Goodness team distributed £8,000 worth of nutritious food packs to those facing hunger during the humanitarian crisis in Gaza.</p>
-      <p>Each food pack contained essentials for families, helping sustain them.</p>
+      <p>On 23rd April, our Seeds of Goodness team distributed £3,000 worth of water during the humanitarian crisis in Gaza.</p>
+      <p>Each water pack contained essentials for families, helping sustain them during Ramadan and beyond.</p>
       <p>Your donations truly save lives. Thank you for your support.</p>
     `,
-    date: "2025-04-11",
+    date: "2025-03-23",
     image: "/seedofg-pic1.jpg",
     video: "https://www.youtube.com/embed/6i8yyzRUtB8?si=s9YaArJQOpMZSRsL",
     author: "Seeds of Goodness Team",

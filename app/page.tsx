@@ -95,7 +95,7 @@ export default function HomePage() {
               </div>
               <div className="w-full max-w-md space-y-2">
                 <div className="flex justify-between text-sm">
-                  <div>Raised: {formatCurrency(245000)}</div>
+                  <div>Raised: {formatCurrency(69000)}</div>
                   <div>Goal: {formatCurrency(500000)}</div>
                 </div>
                 <Progress value={49} className="h-2 w-full bg-brand-brown-100">
@@ -212,11 +212,18 @@ export default function HomePage() {
                   <h3 className="text-xl font-bold text-white">1,200+</h3>
                   <p className="text-sm text-white/80">Shelters Built</p>
                 </div>
-                <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
-                  <Users className="h-10 w-10 text-brand-green-400" />
-                  <h3 className="text-xl font-bold text-white">50,000+</h3>
-                  <p className="text-sm text-white/80">People Helped</p>
+                <div className="flex flex-col items-center space-y-2 bg-white/30 backdrop-blur-md p-6 rounded-xl border-2 border-brand-green-400 shadow-lg scale-105">
+                  <Users className="h-12 w-12 text-brand-green-400 animate-pulse" />
+                  <h3 className="text-2xl font-extrabold text-brand-green-400 uppercase tracking-wide">
+                    50,000+
+                  </h3>
+                  <p className="text-base text-white font-medium">
+                    We aim to have
+                    <br />
+                    over 50,000 people helping
+                  </p>
                 </div>
+
                 <div className="flex flex-col items-center space-y-2 bg-white/20 backdrop-blur-sm p-6 rounded-xl">
                   <MessageCircle className="h-10 w-10 text-brand-green-400" />
                   <h3 className="text-xl font-bold text-white">25+</h3>
